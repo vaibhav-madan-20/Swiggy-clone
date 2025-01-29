@@ -1,5 +1,11 @@
 # Food App
 
+## Screenshots
+
+![Home Screen](Other/screenshots/screenshot_1.jpeg)
+
+![Screenshot 1](Other/screenshots/screenshot_2.jpeg)
+
 To run the app:  
 `npm start`  
 
@@ -47,10 +53,3 @@ To run the tests:
     ```sh
     npm i -D @testing-library/jest-dom
     ```
-
-
-## Screenshots
-
-![Home Screen](Other/screenshots/screenshot_1.jpeg)
-
-![Screenshot 1](Other/screenshots/screenshot_2.jpeg)
