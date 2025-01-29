@@ -4,7 +4,7 @@
 
 ![Home Screen](Other/screenshots/screenshot_1.jpeg)
 
-![Screenshot 1](Other/screenshots/screenshot_2.jpeg)
+![Cart Screen](Other/screenshots/screenshot_2.jpeg)
 
 To run the app:  
 `npm start`  
@@ -34,7 +34,7 @@ To run the tests:
   - Address  
   - Contact  
 
-# Steps involved in setting up testing in this app  
+## Steps involved in setting up testing in this app  
 
 1. Install React Testing Library  
 2. Install Jest  
