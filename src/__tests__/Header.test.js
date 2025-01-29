@@ -4,7 +4,6 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import appStore from "../utils/appStore";
 import Header from "../components/Header";
-import Body from "../components/Body";
 
 it("Header test",()=>{
     render(

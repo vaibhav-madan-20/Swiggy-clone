@@ -1,13 +1,11 @@
 import { CDN_URL } from "../utils/constants";
-import { useContext } from "react";
-import UserContext from "../utils/userContext";
 
 const RestaurantCard = ({ resData }) => {
   const { cloudinaryImageId, name, avgRating, cuisines, costForTwo, sla } =
     resData?.info;
 
   return (
-    <div className="m-4 p-4 w-[280px] border rounded-2xl shadow-md hover:shadow-lg hover:bg-gray-50 transition duration-300 h-[400px] flex flex-col justify-between">
+    <div className="m-4 p-4 w-[280px] border rounded-2xl shadow-md hover:shadow-lg transition duration-300 h-[400px] flex flex-col justify-between">
       {/* Image Section */}
       <div className="flex justify-center">
         <img

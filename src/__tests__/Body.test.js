@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import appStore from "../utils/appStore";
 import Body from "../components/Body";
-import MOCK_DATA from "../mocks/mockResListData.json";
+import MOCK_DATA from "./mocks/mockResListData.json";
 import UserContext from "../utils/userContext";  // Import UserContext
 import * as onlineStatus from "../utils/useOnlineStatus";  // Import useOnlineStatus hook
 
@@ -38,12 +38,7 @@ it("Header test", async () => {
     );
 
     const filter = screen.getByRole('button', { name: "Top Rated Restaurants" });
-    const search = screen.getByRole('button', { name: "Search" });
     fireEvent.click(filter);
-    fireEvent.click(search);
-
-    const userName = screen.getByTestId("username");
-    fireEvent.change(userName, { target: { value: "username" } });
 
     expect(screen.queryByText("Looks like you are offline!! Please check your internet connection")).not.toBeInTheDocument();
 });

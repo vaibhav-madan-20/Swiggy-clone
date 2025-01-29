@@ -10,7 +10,6 @@ import MOCK_DATA_MENU from "./mocks/mockResDataMenu.json";
 import Header from "../components/Header";
 import RestaurantMenu from "../components/RestaurantMenu";
 import Cart from "../components/Cart";
-import useOnlineStatus from "../utils/useOnlineStatus";
 
 global.fetch = jest.fn(()=>{
     return Promise.resolve({

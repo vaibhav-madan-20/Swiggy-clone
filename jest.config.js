@@ -195,4 +195,8 @@ const config = {
   // watchman: true,
 };
 
+config.moduleNameMapper = {
+  '\\.png$': '<rootDir>/src/__tests__/mocks/fileMock.js',
+};
+
 module.exports = config;

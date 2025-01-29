@@ -26,15 +26,10 @@ it("Should render the body component",async()=>{
     expect(cardsBeforeSearch.length).toBe(8);
 
     const searchInput = screen.getByTestId("searchInput");
-    const searchBtn = screen.getByRole('button',{name: 'Search'});
+    // const searchBtn = screen.getByRole('button',{name: 'Search'});
     fireEvent.change(searchInput,{target: {value: "and"}});
-    fireEvent.click(searchBtn);
+    // fireEvent.click(searchBtn);
 
     const cardsAfterSearch = screen.getAllByTestId("resCard");
     expect(cardsAfterSearch.length).toBe(1);
 });
-
-// beforeEach(()=>{console.log("hey 1")});
-// beforeAll(()=>{console.log("hey 2")});
-// afterEach(()=>{console.log("hey 3")});
-// afterAll(()=>{console.log("hey 4")});

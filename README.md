@@ -1,98 +1,49 @@
-# Namaste React 🚀
+# Food App
 
+To run the app:  
+`npm start`  
 
-# Parcel
-- Dev Build
-- Local Server
-- HMR = Hot Module Replacement
-- File Watching Algorithm - written in C++
-- Caching - Faster Builds
-- Image Optimization
-- Minification
-- Bundling
-- Compress
-- Consistent Hashing
-- Code Splitting
-- Differential Bundling - support older browsers
-- Diagnostic
-- Error Handling
-- HTTPs
-- Tree Shaking - remove unused code
-- Different dev and prod bundles
+To build the app:  
+`npm run build`  
 
+To run the tests:  
+`npm run test`  
 
+## App structure  
 
-# Namaste Food
+- **Header**  
+  - Logo  
+  - Nav Items  
 
+- **Body**  
+  - Search  
+  - RestaurantContainer  
+  - RestaurantCard  
+    - img  
+    - Name of Restaurant, Star Rating, Cuisine, Delivery Time  
 
-/**
- * Header
- *  - Logo
- *  - Nav Items
- * Body
- *  - Search
- *  - RestaurantContainer
- *    - RestaurantCard
- *      - Img
- *      - Name of Res, Star Rating, cuisine, delery tie
- * Footer
- *  - Copyright
- *  - Links
- *  - Address
- *  - Contact
- */
+- **Footer**  
+  - Copyright  
+  - Links  
+  - Address  
+  - Contact  
 
+# Steps involved in setting up testing in this app  
 
-
- Two types of Export/Import
-
-
-- Default Export/Import
-
-export default Component;
-import Component from "path";
-
-
-- Named Export/Import
-
-export const Component;
-import {Component} from "path";
-
-
-# React Hooks
- (Normal JS utility functions)
-- useState() - Superpowerful State Variables in react
-- useEffect()
-
-
-
-
-
-# Redux Toolkit
-    - Install @reduxjs/toolkit and react-redux
-    - Build our store
-    - Connect our store to the app
-    - Slice (cartSlice)
-    - dispatch action
-    - Selector
-
-
-Types of testing (development)-
-    1) Unit testing
-    2) Integration testing
-    3) End to End testing
-
-# Setting up testing in our app
-- Install React Testing Library
-- Install Jest
-- Install Jest dependency Babel
-- Configure Babel
-- Configure parcel config file to disable default Babel transpilation
-- Jest - npx jsx --init
-- Install jsdom library
-- Install @babel/preset-react - to make JSX work in test cases
-- Include @babel/preset-react inside my babel configuration
-add this to babel.config.js- ['@babel/preset-react', { runtime : "automatic" }],
--  npm i -D @testing-library/jest-dom
-
-plugin vscode-icons
+1. Install React Testing Library  
+2. Install Jest  
+3. Install Jest dependency Babel  
+4. Configure Babel  
+5. Configure Parcel config file to disable default Babel transpilation  
+6. Jest - `npx jest --init`  
+7. Install jsdom library  
+8. Install `@babel/preset-react` to make JSX work in test cases  
+9. Include `@babel/preset-react` inside Babel configuration  
+   - Add this to `babel.config.js`:  
+     ```javascript
+     ['@babel/preset-react', { runtime: "automatic" }]
+     ```
+10. Install Jest DOM:  
+    ```sh
+    npm i -D @testing-library/jest-dom
+    ```

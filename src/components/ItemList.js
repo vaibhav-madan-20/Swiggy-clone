@@ -2,16 +2,15 @@ import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
 import { addItem } from "../utils/cartSlice";
 
-import vegImage from "../utils/veg.png";
-import nonvegImage from "../utils/nonveg.png";
+import vegImage from "../utils/assets/veg.png";
+import nonvegImage from "../utils/assets/nonveg.png";
+
 
 const ItemList = ({ items }) => {
     const dispatch = useDispatch();
     const handleAddItem = item => {
         dispatch(addItem(item));
     }
-
-    console.log(items);
     return (
         <div className="flex flex-col space-y-6">
             {items.map(i => (
@@ -31,7 +30,7 @@ const ItemList = ({ items }) => {
                         {/* Right Side - Image & Button */}
                         <div className="flex flex-col items-center justify-center relative">
                             <button
-                                className="absolute bottom-2 bg-indigo-600 text-white py-2 px-4 rounded-lg shadow-md transition-colors duration-200"
+                                className="absolute bottom-2 bg-indigo-600 text-white py-2 px-4 rounded-lg shadow-md active:scale-90 transition-transform duration-150"
                                 onClick={() => handleAddItem(i)}
                                 data-testid="add"
                             >
