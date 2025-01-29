@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { RES_API } from "../utils/constants";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listOfRestaurants, setListofRestaurants] = useState([]);
@@ -27,7 +28,7 @@ const Body = () => {
     return <h1>Looks like you are offline!! Please check your internet connection</h1>;
 
   return listOfRestaurants.length === 0 ? (
-    null
+    <Shimmer />
   ) : (
     <div className="h-screen">
         <div className="mt-6 mb-4 flex justify-center">
