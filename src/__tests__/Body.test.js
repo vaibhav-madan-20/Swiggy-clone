@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import appStore from "../utils/appStore";
 import Body from "../components/Body";
 import MOCK_DATA from "./mocks/mockResListData.json";
-import UserContext from "../utils/userContext";  // Import UserContext
+import UserContext from "../utils/UserContext";  // Import UserContext
 import * as onlineStatus from "../utils/useOnlineStatus";  // Import useOnlineStatus hook
 
 global.fetch = jest.fn(() => {
