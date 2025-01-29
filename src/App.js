@@ -1,4 +1,4 @@
-import css from "./index.css"
+import "./index.css"
 
 import React, {Suspense, useState, useEffect, StrictMode} from "react";
 import ReactDOM from "react-dom/client";
@@ -12,7 +12,7 @@ import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Cart from "./components/Cart";
 
-import UserContext from "./utils/userContext";
+import UserContext from "./utils/UserContext";
 
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
