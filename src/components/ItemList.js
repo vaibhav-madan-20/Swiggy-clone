@@ -5,32 +5,31 @@ import { addItem } from "../utils/cartSlice";
 import vegImage from "../utils/assets/veg.png";
 import nonvegImage from "../utils/assets/nonveg.png";
 
-
 const ItemList = ({ items }) => {
     const dispatch = useDispatch();
     const handleAddItem = item => {
         dispatch(addItem(item));
     }
     return (
-        <div className="flex flex-col space-y-6">
+        <div className="flex flex-col space-y-6 sm:space-y-8 lg:space-y-10">
             {items.map(i => (
                 <div
                     className="p-4 rounded-lg shadow-lg bg-gradient-to-r from-gray-100 to-white transition-transform duration-300 ease-in-out"
                     key={i.card.info.id} data-testid="foodItems"
                 >
-                    <div className="flex justify-between items-center">
+                    <div className="flex flex-col sm:flex-row justify-between items-center">
                         {/* Left Side - Item Info */}
                         <div className="flex-1 max-w-[500px] space-y-3">
-                            <img className="w-4"src={i.card.info.isVeg ? vegImage : nonvegImage} alt="" />
+                            <img className="w-4" src={i.card.info.isVeg ? vegImage : nonvegImage} alt="" />
                             <h3 className="text-lg font-semibold text-gray-800">{i.card.info.name}</h3>
                             <p className="text-lg text-indigo-600">₹{i.card.info.defaultPrice ? i.card.info.defaultPrice / 100 : i.card.info.price / 100}</p>
-                            <p className="text-sm text-gray-600">{i.card.info.description}</p>
+                            <p className="hidden lg:inline text-sm text-gray-600 text-justify">{i.card.info.description}</p>
                         </div>
 
                         {/* Right Side - Image & Button */}
-                        <div className="flex flex-col items-center justify-center relative">
+                        <div className="flex flex-col items-center justify-center relative mt-4 sm:mt-0">
                             <button
-                                className="absolute bottom-2 bg-indigo-600 text-white py-2 px-4 rounded-lg shadow-md active:scale-90 transition-transform duration-150"
+                                className="absolute bottom-2 bg-indigo-600 text-white py-2 px-4 rounded-lg shadow-md"
                                 onClick={() => handleAddItem(i)}
                                 data-testid="add"
                             >

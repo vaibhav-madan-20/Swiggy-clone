@@ -1,90 +1,19 @@
-import { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import { useSelector } from "react-redux";
-import useOnlineStatus from "../utils/useOnlineStatus";
-import UserContext from "../utils/UserContext";
-import logoImage from "../utils/assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-  const [btnNameReact, setBtnNameReact] = useState("Login");
-  const onlineStatus = useOnlineStatus();
-  const { loggedInUser } = useContext(UserContext);
-
-  const cartItems = useSelector((store) => store.cart.items);
-
+const cart = useSelector(store => store.cart.items)
   return (
-    <header className="flex justify-between items-center h-[100px] bg-blue-500 text-black shadow-md px-6">
-      {/* Logo Section */}
-      <div className="">
-        <Link to="/">
-          <img className="h-[100px]" src={logoImage} alt="Logo" />
-        </Link>
+    <nav className="bg-gray-700 text-white p-4">
+      <div className="flex flex-col md:flex-row md:justify-around">
+        <Link to="/" className="p-2 md:px-4 text-center hover:bg-gray-600">Home</Link>
+        <Link to="/about" className="p-2 md:px-4 text-center hover:bg-gray-600">About</Link>
+        <Link to="/contact" className="p-2 md:px-4 text-center hover:bg-gray-600">Contact</Link>
+        <Link to="/grocery" className="p-2 md:px-4 text-center hover:bg-gray-600">Grocery</Link>
+        <Link to="/cart" className="p-2 min-w-28 md:px-4 text-center hover:bg-gray-600">Cart ({cart.length})</Link>
       </div>
-
-      {/* Navigation Section */}
-      <nav className="flex items-center">
-        <ul className="flex space-x-6">
-          <li className=" ">
-            Online Status: {onlineStatus ? "✅" : "🔴"}
-          </li>
-          <li>
-            <Link
-              to="/"
-              className="hover:underline transition duration-300  "
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/about"
-              className="hover:underline transition duration-300  "
-            >
-              About Us
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/contact"
-              className="hover:underline transition duration-300  "
-            >
-              Contact Us
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/grocery"
-              className="hover:underline transition duration-300  "
-            >
-              Grocery
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/cart"
-              className="hover:underline transition duration-300   font-bold"
-            >
-              Cart ({cartItems.length})
-            </Link>
-          </li>
-        </ul>
-      </nav>
-
-      {/* User Section */}
-      <div className="flex items-center space-x-4">
-        <button
-          className="bg-gray-100 text-black px-4 py-1 w-24 rounded-lg  hover:bg-gray-200 transition duration-300 "
-          onClick={() => {
-            setBtnNameReact(btnNameReact === "Login" ? "Logout" : "Login");
-          }}
-        >
-          {btnNameReact}
-        </button>
-        <span className="font-bold  whitespace-nowrap">
-          {loggedInUser}
-        </span>
-      </div>
-    </header>
+    </nav>
   );
 };
 
