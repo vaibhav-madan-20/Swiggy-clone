@@ -16,3 +16,5 @@ const cartSlice = createSlice({
 })
 export const {addItem, clearCart}=cartSlice.actions;
 export default cartSlice.reducer;
+
+/* No, this is not wrong because createSlice from Redux Toolkit (RTK) uses Immer internally. This means you can write "mutative" code, but Immer ensures that state updates remain immutable under the hood. */

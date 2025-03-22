@@ -16,7 +16,7 @@ const Body = () => {
   if (buttonClicked) {
     filteredRestaurants = filteredRestaurants.filter(r => {
       if (buttonClicked) {
-        return r.info.avgRating > 4.5;
+        return r.info.avgRating > 4.7;
       }
       else return r;
     })
@@ -47,9 +47,8 @@ const Body = () => {
   if (onlineStatus === false)
     return <h1 className="text-center text-red-600 text-lg font-semibold mt-4">Looks like you are offline!! Please check your internet connection</h1>;
 
-  return ! listOfRestaurants?.length ? (
-    <Shimmer/>
-  ) : (
+  if (!listOfRestaurants.length) return <Shimmer/>;
+  return  (
     <div className="min-h-screen flex flex-col justify-between">
       <div className="mt-6 mb-4 flex flex-col sm:flex-row items-center justify-center gap-4 px-4">
         <input
@@ -78,7 +77,7 @@ const Body = () => {
         </button>
       </div>
 
-      <div className="flex-grow">
+      {filteredRestaurants.length && <div className="flex-grow">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4">
             <RestaurantCardPromoted resData={filteredRestaurants[0]} />
             {filteredRestaurants.slice(1)
@@ -88,7 +87,7 @@ const Body = () => {
             </Link>
           ))}
         </div>
-      </div>
+      </div>}
 
       <footer className="bg-gray-800 text-white py-4 mt-8">
         <div className="container mx-auto text-center">
