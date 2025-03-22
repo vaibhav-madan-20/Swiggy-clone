@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 
 class UserClass extends Component {
     state = {
@@ -13,7 +13,7 @@ class UserClass extends Component {
         const { name, location, github } = this.state.userInfo;
 
         return (
-            <div className="mt-4 flex flex-col items-center space-y-6 p-6 bg-blue-100 rounded-2xl shadow-2xl text-gray-800 max-w-md mx-auto">
+            <div className="flex flex-col items-center space-y-6 p-6 bg-blue-100 shadow-2xl text-gray-800 max-w-md mx-auto">
                 <img
                     src="https://avatars.githubusercontent.com/u/144939273?v=4"
                     alt="Profile"

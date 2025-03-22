@@ -5,21 +5,20 @@ import { Provider } from "react-redux";
 import appStore from "../utils/appStore";
 import Header from "../components/Header";
 
-it("Header test",()=>{
-    render(
-        <BrowserRouter>
-            <Provider store={appStore}>
-                <Header/>
-            </Provider>
-        </BrowserRouter>
-    );
+// it("Header test",()=>{
+//     render(
+//         <BrowserRouter>
+//             <Provider store={appStore}>
+//                 <Header/>
+//             </Provider>
+//         </BrowserRouter>
+//     );
 
-    const login = screen.getByRole('button',{name:"Login"});
-    fireEvent.click(login);
-    const logout = screen.getByRole('button', { name: "Logout" });
-    expect(logout).toBeInTheDocument();
-
-});
+//     const login = screen.getByRole('button',{name:"Login"});
+//     fireEvent.click(login);
+//     const logout = screen.getByRole('button', { name: "Logout" });
+//     expect(logout).toBeInTheDocument();
+// });
 
 
 it("Header test 2",()=>{

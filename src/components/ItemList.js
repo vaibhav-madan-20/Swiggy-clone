@@ -11,37 +11,37 @@ const ItemList = ({ items }) => {
         dispatch(addItem(item));
     }
     return (
-        <div className="flex flex-col space-y-6 sm:space-y-8 lg:space-y-10">
+        <div className="flex flex-col">
             {items.map(i => (
                 <div
-                    className="p-4 rounded-lg shadow-lg bg-gradient-to-r from-gray-100 to-white transition-transform duration-300 ease-in-out"
+                    className="p-4 rounded-lg shadow-lg bg-gradient-to-r from-gray-100 to-white"
                     key={i.card.info.id} data-testid="foodItems"
                 >
-                    <div className="flex flex-col sm:flex-row justify-between items-center">
+                    <div className="flex justify-between items-center">
                         {/* Left Side - Item Info */}
-                        <div className="flex-1 max-w-[500px] space-y-3">
-                            <img className="w-4" src={i.card.info.isVeg ? vegImage : nonvegImage} alt="" />
-                            <h3 className="text-lg font-semibold text-gray-800">{i.card.info.name}</h3>
-                            <p className="text-lg text-indigo-600">₹{i.card.info.defaultPrice ? i.card.info.defaultPrice / 100 : i.card.info.price / 100}</p>
+                        <div>
+                            <img className="w-4" src={i.card.info.isVeg ? vegImage : nonvegImage} />
+                            <h3 className="w-36 max-w-36 md:text-lg font-semibold text-gray-800">{i.card.info.name}</h3>
+                            <p className="md:text-lg text-indigo-600">₹{i.card.info.defaultPrice ? i.card.info.defaultPrice / 100 : i.card.info.price / 100}</p>
                             <p className="hidden lg:inline text-sm text-gray-600 text-justify">{i.card.info.description}</p>
                         </div>
 
                         {/* Right Side - Image & Button */}
                         <div className="flex flex-col items-center justify-center relative mt-4 sm:mt-0">
                             <button
-                                className="absolute bottom-2 bg-indigo-600 text-white py-2 px-4 rounded-lg shadow-md"
+                                className="w-20 absolute bottom-2 bg-indigo-600 text-white py-1 px-2 md:py-2 md:px-4 rounded-lg shadow-md"
                                 onClick={() => handleAddItem(i)}
                                 data-testid="add"
                             >
                                 Add+
                             </button>
-                            {i.card.info.imageId && (
+                            
                                 <img
                                     src={CDN_URL + i.card.info.imageId}
-                                    className="w-40 h-40 object-cover rounded-md border-2 border-gray-200 shadow-md"
+                                    className="w-28 h-32 md:w-40 md:h-48 md:min-w-40 md:min-h-48 object-cover rounded-3xl border-2 border-gray-200 shadow-md"
                                     alt="Food item"
                                 />
-                            )}
+                            
                         </div>
                     </div>
                 </div>

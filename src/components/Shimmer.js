@@ -1,22 +1,42 @@
-const Shimmer = () => {
+const ShimmerCard = () => {
   return (
-    <div className="grid grid-cols-4 gap-4 p-4">
-      {Array.from({ length: 16 }).map((_, index) => (
-        <div
-          key={index}
-          className="w-[300px] h-[200px] bg-gray-100  rounded-lg flex flex-col"
-        >
-          {/* Image Section */}
-          <div className="h-2/3 bg-gray-300 rounded-t-lg"></div>
+    <div className="bg-white shadow-lg rounded-lg overflow-hidden w-68">
+      {/* Image Section */}
+      <div className="h-48 w-full rounded-t-lg bg-gray-300 ">
+      </div>
 
-          {/* Text Section */}
-          <div className="p-4 flex flex-col gap-2">
-            <div className="h-4 bg-gray-300 rounded"></div>
-          </div>
+      {/* Text Section */}
+      <div className="p-4 rounded-b-lg">
+        {/* Restaurant Name */}
+        <div className="h-6 bg-gray-300 rounded w-3/4 mb-2 "></div>
+
+        {/* Cuisines */}
+        <div className="h-4 bg-gray-300 rounded w-full mb-3 "></div>
+
+        {/* Rating and Cost Row */}
+        <div className="flex items-center justify-between mt-2">
+          <div className="h-4 bg-gray-300 rounded w-16 "></div>
+          <div className="h-4 bg-gray-300 rounded w-20 "></div>
         </div>
-      ))}
+
+        {/* Delivery Time */}
+        <div className="h-4 bg-gray-300 rounded w-24 mt-2 "></div>
+      </div>
     </div>
   );
 };
 
-export default Shimmer;
+const Shimmer = () => {
+  return (
+      <div className="flex-grow">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4">
+            {Array(12).fill(undefined)
+            .map((restaurant, i) => (
+                <ShimmerCard key={i} />
+            ))}
+        </div>
+      </div>
+  )
+}
+
+export default Shimmer

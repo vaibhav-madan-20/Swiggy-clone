@@ -1,11 +1,5 @@
 # Food App
 
-## Screenshots
-
-![Home Screen](Other/screenshots/screenshot_1.jpeg)
-
-![Cart Screen](Other/screenshots/screenshot_2.jpeg)
-
 To run the app:  
 `npm start`  
 
@@ -45,10 +39,10 @@ To run the tests:
 7. Install jsdom library  
 8. Install `@babel/preset-react` to make JSX work in test cases  
 9. Include `@babel/preset-react` inside Babel configuration  
-   - Add this to `babel.config.js`:  
-     ```javascript
-     ['@babel/preset-react', { runtime: "automatic" }]
-     ```
+- Add this to `babel.config.js`:  
+  ```javascript
+  ['@babel/preset-react', { runtime: "automatic" }]
+  ```
 10. Install Jest DOM:  
     ```sh
     npm i -D @testing-library/jest-dom

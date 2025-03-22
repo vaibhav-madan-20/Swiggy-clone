@@ -1,8 +1,9 @@
 import "./index.css"
 
-import React, {Suspense, useState, useEffect, StrictMode} from "react";
+import React, { Suspense, useState, StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { Provider } from "react-redux";
 
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -13,31 +14,25 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import Cart from "./components/Cart";
 
 import UserContext from "./utils/UserContext";
-
-import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 
-
 const Grocery = React.lazy(() => import("./components/Grocery"));
+
 const AppLayout = () => {
   const [userName, setUserName] = useState("Vaibhav Madan");
 
-  return <>
-  <Provider store={appStore}>
-    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-      <div>
-        <Header />
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+  return <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+          <Header />
+          <Outlet />
+      </UserContext.Provider>
     </Provider>
-  </>;
 };
 
 const appRouter = createBrowserRouter([
   {
-    path : "/",
-    element : <AppLayout />,
+    path: "/",
+    element: <AppLayout />,
     children: [
       {
         path: "/",
@@ -57,11 +52,11 @@ const appRouter = createBrowserRouter([
         element: <RestaurantMenu />
       },
       {
-        path:"/grocery",
+        path: "/grocery",
         element: <Suspense fallback={<h1>Loading....</h1>}><Grocery /></Suspense>
       },
       {
-        path:"/cart",
+        path: "/cart",
         element: <Suspense fallback={<h1>Loading....</h1>}><Cart /></Suspense>
       },
     ],
@@ -72,7 +67,9 @@ const appRouter = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <StrictMode>
-    <RouterProvider router={appRouter} />
+  <StrictMode >
+    <div className="overflow-x-hidden">
+      <RouterProvider router={appRouter} />
+    </div>
   </StrictMode>
 );

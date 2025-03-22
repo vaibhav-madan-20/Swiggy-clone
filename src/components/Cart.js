@@ -21,7 +21,7 @@ const Cart = () => {
             </button>
         {cartItems.length === 0 && <h1>Cart is empty. Add items to your cart!</h1>}
         </div>
-        {cartItems.length > 0 && <div className="w-3/5 mx-auto my-4 bg-stone-100 text-justify rounded-lg border border-gray-300 shadow-lg p-4 hover:bg-stone-200 ">
+        {cartItems.length > 0 && <div className="w-3/5 mx-auto my-4 bg-stone-100 text-justify rounded-lg border border-gray-300 shadow-lg p-4">
             <ItemList items={cartItems} />
         </div>}
         </>
