@@ -29,8 +29,8 @@ const ShimmerCard = () => {
 const Shimmer = () => {
   return (
       <div className="flex-grow mt-28">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4">
-            {Array(9).fill(undefined)
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 px-4">
+            {Array(8).fill(undefined)
             .map((restaurant, i) => (
                 <ShimmerCard key={i} />
             ))}

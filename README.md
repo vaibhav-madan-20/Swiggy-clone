@@ -1,4 +1,19 @@
-# Food App
+# Swiggy clone
+
+A swiggy clone built using React. Features include restaurant listings, menus, search, filtering, shimmer UI, and add-to-cart functionality.
+
+## Screenshots
+![Home page](screenshots/2.png)
+---
+![Shimmer UI](screenshots/1.png)
+---
+![Restaurant menu](screenshots/3.png)
+---
+![Cart](screenshots/5.png)
+---
+![Grocery store](screenshots/4.png)
+---
+
 
 To run the app:  
 `npm start`  
@@ -7,26 +22,26 @@ To build the app:
 `npm run build`  
 
 To run the tests:  
-`npm run test`  
+`npm run test`
 
-## App structure  
+## App structure
 
-- **Header**  
-  - Logo  
-  - Nav Items  
+- **Header**
+  - Logo
+  - Nav Items
 
 - **Body**  
-  - Search  
-  - RestaurantContainer  
-  - RestaurantCard  
-    - img  
-    - Name of Restaurant, Star Rating, Cuisine, Delivery Time  
+  - Search
+  - RestaurantContainer
+  - RestaurantCard
+    - img
+    - Name of Restaurant, Star Rating, Cuisine, Delivery Time
 
-- **Footer**  
-  - Copyright  
-  - Links  
-  - Address  
-  - Contact  
+- **Footer**
+  - Copyright
+  - Links
+  - Address
+  - Contact
 
 ## Steps involved in setting up testing in this app  
 

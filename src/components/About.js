@@ -5,7 +5,7 @@ class About extends Component {
         super(props);
     }
     render() {
-        return <UserClass name={"Vaibhav Madan"} location={"India"} github={"vaibhav1565"} />
+        return <UserClass name={"Vaibhav Madan"} location={"India"} github={"vaibhav-madan-20"} />
     }
 }
 
